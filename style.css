@@ -2,121 +2,155 @@
   padding:0px;
   margin:0px;
   box-sizing:border-box;
-  
+  border:2px #000 solid;
 }
 
 html,body{
-  background-color:#630F0F;
+  background-color:#f1d1b2;
   display:flex;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
   width:100%;
   height:100%;
   margin:0;
   font-size:14px;
   font-family:微軟正黑體;
   font-weight:700;
-  background-image: url("https://i.imgur.com/9uIuUcR.png");
   z-index: -3;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment:fixed;
-  background-size:85%;
-}
-
-a{
-  color:initial;
-  text-decoration:initial;
-}
-
-.box{
-  width:500px;
-  box-shadow:0px 0px 35px rgba(0,0,0,0.3);
-  transition:0.5s;
-  border-radius:0px 0px 30px 30px;
-  height:200px;
-  background:linear-gradient(transparent 60%,white 0%);
   
 }
 
-.box:hover{
-  box-shadow:5px 5px 60px rgba(0,0,0,0.4);
-  -webkit-transform:translate(-5px,-5px);
-          transform:translate(-5px,-5px);
-  height:525px;
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  margin-top:70px;
 }
 
-.box:hover .top{
-  height:350px;
-
+#panel {
+  padding: 50px;
+  display: none;
 }
 
-.box:hover .bottom{
-  opacity:1;
+@-webkit-keyframes buttonan{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
 
-
-.top{
-  background-image:url(https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-position:center;
-  background-size:cover;
-  height:250px;
-  position:relative;
-  transition:0.5s;
-  border-radius:30px 30px 30px 30px;
+@keyframes buttonan{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
 
-.top .name{
-  position:absolute;
-  left:00px;
-  bottom: 0px;
-  padding:5px 15px;
-  letter-spacing:5px;
-  color:#630F0F;
-  font-size:35px;
-  font-weight:1000;
-  background:linear-gradient(transparent 0%,white 100%);
-  width:100%;
-  padding-top:100%;
-  padding-top:30px;
-  padding-bottom:15px;
-  border-radius: 0px 0px 30px 30px;
-  
-}
-
-.top .name .smaillText{
-  font-size:14px;
+.button{
+  -webkit-animation-name:buttonan;
+          animation-name:buttonan;
+  -webkit-animation-duration:3s;
+          animation-duration:3s;
+  -webkit-animation-delay:1s;
+          animation-delay:1s;
+  -webkit-animation-fill-mode:forwards;
+          animation-fill-mode:forwards;
   opacity:0;
   
+  
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #785a3c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  height:80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  top:60%;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@-webkit-keyframes typing {
+  from { width: 0 }
+}
+
+@keyframes typing {
+  from { width: 0 }
+}
+
+h1 {
+  width: 11em;
+  color:#785a3c;
+  text-align:center;
+  border-right: .05em solid;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-animation: typing 1s steps(11),
+    caret 1s steps(1) infinite;
+          animation: typing 1s steps(11),
+    caret 1s steps(1) infinite;
+  
+  z-index:2;
+}
+
+h4 {
+  width: 13em;
+  color:#785a3c;
+  text-align:center;
+  border-right: .05em solid;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-animation: typing 1s steps(11),
+    caret 1s steps(1) infinite;
+          animation: typing 1s steps(11),
+    caret 1s steps(1) infinite;
+  
 }
 
 
-.bottom{
-  padding:10px 20px 20px 20px;
-  opacity:0;
-  transition:0s;
-}
 
-.bottom:hover {
-  padding:10px 20px 20px 20px;
-  opacity:1;
-  top:0px;
+@-webkit-keyframes caret {
+  50% { border-color: transparent; }
 }
 
 
-.bottom li{
-  padding:5px 0px;
-}
 
-.bottom h3{
-  display:inline-block;
-}
-
-.bottom ul{
-  list-style:none;
-  padding-left:0;
-}
-
-.bottons{
-  margin-top:30px;
+@keyframes caret {
+  50% { border-color: transparent; }
 }
